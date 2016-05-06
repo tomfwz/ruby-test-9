@@ -1,0 +1,104 @@
+#home-index-container
+  .container
+    .row
+      .col.s12
+        .card-panel.teal.lighten-2 This is a card panel with a teal lighten-2 class
+
+        .card-panel
+          span.blue-text.text-darken-2 This is a card panel with dark blue text
+
+        .collection
+          a.collection-item href="#!" 
+            | Alan
+            span.badge 1
+          a.collection-item href="#!" 
+            | Alan
+            span.new.badge 4
+          a.collection-item href="#!"  Alan
+          a.collection-item href="#!" 
+            | Alan
+            span.badge 14
+
+        ul#dropdown2.dropdown-content
+          li
+            a href="#!" 
+              | one
+              span.badge 1
+          li
+            a href="#!" 
+              | two
+              span.new.badge 1
+          li
+            a href="#!"  three
+        a.btn.dropdown-button data-activates="dropdown2" href="#!" 
+          | Dropdown
+          i.mdi-navigation-arrow-drop-down.right
+
+        nav
+          .nav-wrapper
+            a.brand-logo href=""  Logo
+            ul#nav-mobile.right.hide-on-med-and-down
+              li
+                a href=""  sass
+              li
+                a href="" 
+                  | sass
+                  span.new.badge 4
+              li
+                a href=""  sass
+
+        a.waves-effect.waves-light.btn button
+        a.waves-effect.waves-light.btn
+          i.material-icons.left> cloud
+          | button
+        a.waves-effect.waves-light.btn
+          i.material-icons.right> cloud
+          | button
+
+        .input-field.col.s12
+          select
+            option disabled="" selected="" value=""  Choose your option
+            option value="1"  Option 1
+            option value="2"  Option 2
+            option value="3"  Option 3
+          label Materialize Select
+
+        form action="#" 
+          p
+            input#test5 type="checkbox" /
+            label for="test5"  Red
+          p
+            input#test6 checked="checked" type="checkbox" /
+            label for="test6"  Yellow
+          p
+            input#filled-in-box.filled-in checked="checked" type="checkbox" /
+            label for="filled-in-box"  Filled in
+          p
+            input#test7 checked="checked" disabled="disabled" type="checkbox" /
+            label for="test7"  Green
+          p
+            input#test8 disabled="disabled" type="checkbox" /
+            label for="test8"  Brown
+
+        form action="#" 
+          .file-field.input-field
+            .btn
+              span File
+              input type="file" /
+            .file-path-wrapper
+              input.file-path.validate type="text" /
+
+        form action="#" 
+          p.range-field
+            input#test5 max="100" min="0" type="range" /
+
+        input.datepicker type="date" /
+
+coffee:
+
+  jQuery ->
+    $('select').material_select()
+
+    $('.datepicker').pickadate ->
+      selectMonths: true,
+      selectYears: 15
