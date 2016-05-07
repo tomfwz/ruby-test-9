@@ -3,8 +3,17 @@
     .row
       .col.s12.m3
         = render 'filter'
+
       .col.s12.m9
-        = image_tag 'banner.png'
+        .row
+          .col.s12.m12
+            = image_tag 'banner.png'
+        .row
+          .col.s12.m8
+            p.products-count
+          .col.s12.m4
+            = render 'sorter'
+        
         .row.products-listing
           = render @products
 

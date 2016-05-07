@@ -1,3 +1,3 @@
 $('.products-listing').html('<%= j render(@products) %>');
-$('.products-listing').prepend("<div class='col m12'><p class='products-count'><%= pluralize(@products.count, 'matching products') %></p></div>");
+$('.products-count').html("<%= pluralize(@products.count, 'matching products') %>");
 $('.pagination').replaceWith('<%= j will_paginate(@products) %>');

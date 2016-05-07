@@ -1,0 +1,19 @@
+.products-sorter-container
+  .row
+    .col.s12.m4
+      p.sort-by Sort by
+    .col.s12.m8
+      = select_tag "sort_by", options_for_select([['Alphabetical', 'alphabetical'], ['ASC Price', 'asc_price'], ['DESC Price', 'desc_price']])
+
+coffee:
+
+  jQuery ->
+    $('select').material_select()
+
+    $('select').change ->
+      sort_by = $('select').find(':selected').text()
+      $('#product_filter_sort_by').val(sort_by).trigger('change')
+    
+    sort_by = $('select').find(':selected').text()
+    $('#product_filter_sort_by').val(sort_by).trigger('change')
+    

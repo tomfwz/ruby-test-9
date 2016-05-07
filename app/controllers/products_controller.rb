@@ -13,6 +13,6 @@ class ProductsController < ApplicationController
 
   def product_filter_params
     return nil if params[:product_filter].nil?
-    params.require(:product_filter).permit(:min_price, :max_price, brand_ids: [])
+    params.require(:product_filter).permit(:min_price, :max_price, :sort_by, brand_ids: [])
   end
 end
