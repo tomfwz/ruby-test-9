@@ -39,11 +39,11 @@ javascript:
 
       if (handle) {
         max_price.value = value;
+        $('#product_filter_max_price').val(value).trigger('change');
       } else {
         min_price.value = value;
+        $('#product_filter_min_price').val(value).trigger('change');
       }
-      
-      $('form.new_product_filter').submit();
     });
   });
 
