@@ -13,6 +13,7 @@ gem 'bower-rails'
 gem 'slim-rails'
 gem 'paperclip'
 gem 'seedbank'
+gem 'simple_form'
 
 group :development, :test do
   gem 'rspec-rails'
