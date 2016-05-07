@@ -1,0 +1,9 @@
+.products-product-container
+  .col.s12.m4
+    .card
+      .card-image
+        = image_tag product.picture.url(:thumb)
+      .card-content
+        span.card-title = product.name
+        p = product.sku
+        p.price = product.price
