@@ -2,4 +2,7 @@
 //= require materialize
 //= require materialize/extras/noUiSlider/nouislider
 
+@import "theme";
 @import "products/filter";
+@import "products/product";
+@import "products/index";

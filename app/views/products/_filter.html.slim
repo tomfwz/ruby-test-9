@@ -1,10 +1,12 @@
 .products-filter-container
+  p Refine by
+  
   = simple_form_for @product_filter, url: products_path, html: { method: :get }, remote: true do |f|
-    h6 Brands
+    h6.brands Brands
 
     = f.input :brand_ids, as: :check_boxes, collection: Brand.all, label_method: :name, label: false, include_hidden: false
 
-    h6 Price
+    h6.price Price
 
     = f.input :min_price, as: :hidden
     = f.input :max_price, as: :hidden
@@ -39,7 +41,7 @@ javascript:
       } else {
         min_price.value = value;
       }
-
+      
       $('form.new_product_filter').submit();
     });
   });

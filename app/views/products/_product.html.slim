@@ -4,6 +4,11 @@
       .card-image
         = image_tag product.picture.url(:thumb)
       .card-content
-        span.card-title = product.name
-        p = product.sku
+        span.card-title = truncate(product.name, length: 50, separator: ' ')
+        p.sku = product.sku
         p.price = to_currency(product.price)
+
+        .add-to-cart
+          = link_to 'javascript:', class: 'waves-effect waves-light btn' do            
+            i.material-icons.left add_shopping_cart
+            | Add to Cart
