@@ -6,4 +6,4 @@
       .card-content
         span.card-title = product.name
         p = product.sku
-        p.price = product.price
+        p.price = to_currency(product.price)
