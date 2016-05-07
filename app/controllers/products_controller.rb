@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   def index
     @product_filter = ProductFilter.new(product_filter_params)
-    @products = Product.all
+    @products = @product_filter.result
   end
 
   private

@@ -11,4 +11,8 @@ class Product < ActiveRecord::Base
 
   validates_attachment :picture,  content_type: { content_type: /\Aimage\/.*\Z/ },
                                   size:         { less_than: 5.megabyte }
+
+  def self.find_by_brand_ids(brand_ids)
+    where(brand_id: brand_ids)
+  end
 end
