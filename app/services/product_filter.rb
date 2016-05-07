@@ -4,7 +4,6 @@ class ProductFilter
 
   attr_accessor :brand_ids, :min_price, :max_price
 
-
   def initialize(options)
     return if options.nil?
     @brand_ids = options[:brand_ids]

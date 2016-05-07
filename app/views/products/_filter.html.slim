@@ -6,4 +6,40 @@
 
     h6 Price
 
-    = f.submit 'Submit', class: 'btn'
+    = f.input :min_price, as: :hidden
+    = f.input :max_price, as: :hidden
+    
+    #price-slider
+    
+  #connect
+
+javascript:
+
+  $(document).ready(function() {
+    var slider = document.getElementById('price-slider');
+    var min_price = document.getElementById('product_filter_min_price');
+    var max_price = document.getElementById('product_filter_max_price');
+
+    noUiSlider.create(slider, {
+      start: [0, 150],
+      connect: true,
+      step: 5,
+      range: {
+        'min': 0,
+        'max': 200
+      },
+      format: wNumb({
+        decimals: 0
+      })
+    });
+
+    slider.noUiSlider.on('update', function(values, handle) {
+      var value = values[handle];
+
+      if (handle) {
+        max_price.value = value;
+      } else {
+        min_price.value = value;
+      }
+    });
+  });
