@@ -7,8 +7,8 @@ class ProductFilter
   def initialize(options)
     return if options.nil?
     @brand_ids = options[:brand_ids]
-    @min_price = options[:min_price].to_f
-    @max_price = options[:max_price].to_f
+    @min_price = options[:min_price]
+    @max_price = options[:max_price]
     @sort_by   = options[:sort_by]
   end
 
