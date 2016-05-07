@@ -2,6 +2,11 @@ class ProductsController < ApplicationController
   def index
     @product_filter = ProductFilter.new(product_filter_params)
     @products = @product_filter.result
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   private

@@ -1,5 +1,5 @@
 .products-filter-container
-  = simple_form_for @product_filter, url: products_path, html: { method: :get } do |f|
+  = simple_form_for @product_filter, url: products_path, html: { method: :get }, remote: true do |f|
     h6 Brands
 
     = f.input :brand_ids, as: :check_boxes, collection: Brand.all, label_method: :name, label: false, include_hidden: false
@@ -21,7 +21,7 @@ javascript:
     noUiSlider.create(slider, {
       start: [0, 150],
       connect: true,
-      step: 5,
+      step: 50,
       range: {
         'min': 0,
         'max': 200
@@ -39,5 +39,10 @@ javascript:
       } else {
         min_price.value = value;
       }
+
+      $('form.new_product_filter').submit();
     });
   });
+
+coffee:
+  product_filter()
