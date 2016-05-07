@@ -11,6 +11,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bower-rails'
 gem 'slim-rails'
+gem 'paperclip'
 
 group :development, :test do
   gem 'rspec-rails'
