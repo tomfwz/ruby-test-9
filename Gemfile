@@ -12,6 +12,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bower-rails'
 gem 'slim-rails'
 gem 'paperclip'
+gem 'seedbank'
 
 group :development, :test do
   gem 'rspec-rails'
